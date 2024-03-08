@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Lab3MyLibGr;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
 namespace Lab3MyLib.Test
@@ -7,54 +8,54 @@ namespace Lab3MyLib.Test
     public class Lab3MyLibTests
     {
         [TestMethod]
-        public void IsNumericEnter_12345_True()
+        public void IsNumericEnter_12345_ReturnTrue()
         {
             Assert.IsTrue(CheckPassword.IsNumeric("12345"));
         }
 
         [TestMethod]
-        public void IsNumericEnter_12345f_False()
+        public void IsNumericEnter_12345f_ReturnFalse()
         {
             Assert.IsFalse(CheckPassword.IsNumeric("12345f"));
         }
 
         [TestMethod]
-        public void IsUppperEnter_ABCDE_True()
+        public void IsUpperEnter_ABCDE_ReturnTrue()
         {
-            Assert.IsTrue(CheckPassword.IsUppper("ABCDE"));
+            Assert.IsTrue(CheckPassword.IsUpper("ABCDE"));
         }
         [TestMethod]
-        public void IsUppperEnter_ABcDE_False()
+        public void IsUpperEnter_ABcDE_ReturnFalse()
         {
-            Assert.IsFalse(CheckPassword.IsUppper("ABcDE"));
+            Assert.IsFalse(CheckPassword.IsUpper("ABcDE"));
         }
 
         [TestMethod]
-        public void IsLowerEnter_abcde1_True()
+        public void IsLowerEnter_abcde1_ReturnTrue()
         {
             Assert.IsTrue(CheckPassword.IsLower("abcde1"));
         }
 
         [TestMethod]
-        public void IsLowerEnter_abCde_False()
+        public void IsLowerEnter_abCde_ReturnFalse()
         {
             Assert.IsFalse(CheckPassword.IsLower("abCde"));
         }
 
         [TestMethod]
-        public void HasDigitEnter_abcde4_True()
+        public void HasDigitEnter_abcde4_ReturnTrue()
         {
             Assert.IsTrue(CheckPassword.HasDigit("abcde4"));
         }
 
         [TestMethod]
-        public void HasDigitEnter_abcde_False()
+        public void HasDigitEnter_abcde_ReturnFalse()
         {
             Assert.IsFalse(CheckPassword.HasDigit("abcde"));
         }
 
         [TestMethod]
-        public void PasswordLevel_Enter_abcde_Return0()
+        public void PasswordLevelEnter_abcde_Return0()
         {
             int expected = 0;
             int actual = CheckPassword.PasswordLevel("abcde");
@@ -62,7 +63,7 @@ namespace Lab3MyLib.Test
         }
 
         [TestMethod]
-        public void PasswordLevel_Enter_abcdef_Return1()
+        public void PasswordLevelEnter_abcdef_Return1()
         {
             int expected = 1;
             int actual = CheckPassword.PasswordLevel("abcdef");
@@ -70,7 +71,7 @@ namespace Lab3MyLib.Test
         }
 
         [TestMethod]
-        public void PasswordLevel_Enter_ABCDEF_Return1()
+        public void PasswordLevelEnter_ABCDEF_Return1()
         {
             int expected = 1;
             int actual = CheckPassword.PasswordLevel("ABCDEF");
@@ -78,7 +79,7 @@ namespace Lab3MyLib.Test
         }
 
         [TestMethod]
-        public void PasswordLevel_123456_Return1()
+        public void PasswordLevelEnter_123456_Return1()
         {
             int expected = 1;
             int actual = CheckPassword.PasswordLevel("123456");
@@ -86,7 +87,7 @@ namespace Lab3MyLib.Test
         }
 
         [TestMethod]
-        public void PasswordLevel_ABCDEf_Return2()
+        public void PasswordLevelEnter_ABCDEf_Return2()
         {
             int expected = 2;
             int actual = CheckPassword.PasswordLevel("ABCDEf");
@@ -94,15 +95,15 @@ namespace Lab3MyLib.Test
         }
 
         [TestMethod]
-        public void PasswordLevel_ABCDE1_Return3()
+        public void PasswordLevelEnter_ABCDE1_Return2()
         {
-            int expected = 3;
+            int expected = 2;
             int actual = CheckPassword.PasswordLevel("ABCDE1");
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void PasswordLevel_abcde1_Return2()
+        public void PasswordLevelEnter_abcde1_Return2()
         {
             int expected = 2;
             int actual = CheckPassword.PasswordLevel("abcde1");
@@ -110,7 +111,7 @@ namespace Lab3MyLib.Test
         }
 
         [TestMethod]
-        public void PasswordLevel_Abcde1_Return3()
+        public void PasswordLevelEnter_Abcde1_Return3()
         {
             int expected = 3;
             int actual = CheckPassword.PasswordLevel("Abcde1");

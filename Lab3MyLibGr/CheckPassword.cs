@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab3MyLibGr
 {
-    class CheckPassword
+    public class CheckPassword
     {
         public static bool IsNumeric(string word)
         {
@@ -26,12 +26,12 @@ namespace Lab3MyLibGr
                 return false;
             foreach (char c in word)
             {
-                if (!char.IsDigit(c))
+                if (char.IsDigit(c))
                     continue;
                 if (!char.IsLower(c))
                     return false;
             }
-            return false;
+            return true;
         }
         public static bool IsUpper(string word)
         {
@@ -39,7 +39,7 @@ namespace Lab3MyLibGr
                 return false;
             foreach (char c in word)
             {
-                if (!char.IsDigit(c))
+                if (char.IsDigit(c))
                     continue;
                 if (!char.IsUpper(c))
                     return false;
@@ -52,7 +52,7 @@ namespace Lab3MyLibGr
             
             foreach (char c in word)
             {
-                if (!char.IsDigit(c))
+                if (char.IsDigit(c))
                     return true;
                 
             }
